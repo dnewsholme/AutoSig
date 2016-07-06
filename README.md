@@ -1,11 +1,15 @@
 AutoSig
 =======
 
-Automatic Signature Creation For Outlook
+#Automatic Signature Creation For Outlook
 
-This Script will create a signature based on AD attributes.
+This Script will create a signature based on AD attributes. Using Ldap lookup via .Net methods
 
-Updater should be a logon script or event driven when outlook is opened. Autosig.ps1 should reside on a unc path. Each time Updater is run it will check if a new version of the signature is available by checking the file hash of autosig.ps1
-If autosig.ps1 has changed then the signature will update.
+The script should be a logon script or event driven when outlook is opened. Each time the script runs the signature will be recreated.
+Direct Dial and mobile will only populate if the fields have entries in ActiveDirectory
 
-Alternatively you can run Autosig as a logon script and the signature will update every time the user logs on. However this will slow down logon time a bit.
+
+#Customizing the script.
+The HTML code is in the script. Colours can be changed by updating the colour codes `#000000` ect.
+The `$banner` variable should be updated to your own image path on a publicly accessible url.
+`$imgheight` and `imgwidth` should be set to your custom image dimensions.
